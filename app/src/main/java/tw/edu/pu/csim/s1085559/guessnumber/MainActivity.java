@@ -17,7 +17,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-/* 作者：萌芽站長 */
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
 
                                         if (input.getText().toString().matches("")) {
 
-                                            hint.setText("提示訊息：不要空白！請輸入 " + min + "～" + max + " 的數字");
+                                            hint.setText("提示訊息：請勿空白！請輸入 " + min + "～" + max + " 的數字");
 
                                         } else {
 
@@ -186,7 +186,7 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
-
+    /* 作者：萌芽站長 */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();

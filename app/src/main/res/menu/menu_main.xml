@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="tw.edu.pu.csim.s1085559.guessnumber.MainActivity">
 
-    <item android:id="@+id/record_delete" android:title="刪除記錄" app:showAsAction="never"/>
-    <item android:id="@+id/give_up" android:title="放棄遊戲" app:showAsAction="never"/>
-    <item android:id="@+id/restart" android:title="重新開始" app:showAsAction="never"/>
-    <item android:id="@+id/exit" android:title="結束" app:showAsAction="never"/>
+    <item android:id="@+id/record_delete" android:title="刪除記錄" ></item>
+    <item android:id="@+id/give_up" android:title="放棄遊戲" ></item>
+    <item android:id="@+id/restart" android:title="重新開始" ></item>
+    <item android:id="@+id/exit" android:title="結束" ></item>
 </menu>
