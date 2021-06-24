@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
     private SwipeRefreshLayout mSwipeRefreshLayout;
 
-    private TextView hint;
+    private TextView tips;
     private EditText input;
     private Button submit;
     private TextView times;
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        hint = (TextView) findViewById(R.id.hint);
+        tips = (TextView) findViewById(R.id.tips);
         input = (EditText) findViewById(R.id.input);
         submit = (Button) findViewById(R.id.submit);
         times = (TextView) findViewById(R.id.times);
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
                             @Override
                             public void run() {
 
-                                hint.setText("提示訊息：請輸入 " + min + "～" + max + " 的數字");
+                                tips.setText("提示訊息：請輸入 " + min + "～" + max + " 的數字");
                                 times.setText("猜測次數：" + time);
                                 input.setInputType(InputType.TYPE_CLASS_NUMBER);
                                 submit.setEnabled(true); // 啟用按鈕
@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
 
                                         if (input.getText().toString().matches("")) {
 
-                                            hint.setText("提示訊息：請勿空白！請輸入 " + min + "～" + max + " 的數字");
+                                            tips.setText("提示訊息：請勿空白！請輸入 " + min + "～" + max + " 的數字");
 
                                         } else {
 
@@ -121,15 +121,15 @@ public class MainActivity extends AppCompatActivity {
                                             if (in <= max && in >= min) { // 輸入值介於最大至最小可能值內
                                                 if (in > ranNum) {
                                                     max = in;
-                                                    hint.setText("提示訊息：請輸入 " + min + "～" + max + " 的數字");
+                                                    tips.setText("提示訊息：請輸入 " + min + "～" + max + " 的數字");
                                                     time++;
                                                 } else if (in < ranNum) {
                                                     min = in;
-                                                    hint.setText("提示訊息：請輸入 " + min + "～" + max + " 的數字");
+                                                    tips.setText("提示訊息：請輸入 " + min + "～" + max + " 的數字");
                                                     time++;
                                                 } else {
                                                     time++;
-                                                    hint.setText("恭喜猜中數字「" + ranNum + "」！您只花了 " + time + " 次就完成了！");
+                                                    tips.setText("恭喜猜中數字「" + ranNum + "」！您只花了 " + time + " 次就完成了！");
                                                     submit.setEnabled(false);
                                                     // 判斷是否寫入歷史最佳記錄
                                                     if (time < rec) {
@@ -142,7 +142,7 @@ public class MainActivity extends AppCompatActivity {
                                                     }
                                                 }
                                             } else {
-                                                hint.setText("提示訊息：請輸入 " + min + "～" + max + " 的數字，不要亂輸入啦！");
+                                                tips.setText("提示訊息：請輸入 " + min + "～" + max + " 的數字，別亂輸入啦！");
                                                 time++;
                                             }
 
@@ -202,7 +202,7 @@ public class MainActivity extends AppCompatActivity {
             // 建立提示訊息
             Toast.makeText(this, "記錄已刪除", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.give_up) {
-            hint.setText("放棄遊戲！答案是「"+ ranNum +"」");
+            tips.setText("放棄遊戲！答案是「"+ ranNum +"」");
             submit.setEnabled(false);
             times.setText("猜測次數：0");
         } else if (id == R.id.restart) {
